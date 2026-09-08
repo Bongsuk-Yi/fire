@@ -4,12 +4,10 @@
 // 허용된 비밀번호들의 SHA-256 해시 목록입니다.
 // 기본 허용 비밀번호:
 // 1. 'fire'
-// 2. '1234'
 // 3. 'fire2026'
 // 4. 'trend-signal'
 export const ALLOWED_HASHES = [
   'dc9f28b12dd1818ee42ffc92ecb940386214598837348d30d3c6c0b7b57e34c9', // fire
-  '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', // 1234
   '4e431d1b479ecf7de3a27aa5a2515bc47a9bad73ca34a5fcdce083dbbcdd3c4e', // fire2026
   '8bff198e3a3228b89c69b583b5724c5eb8dc1280bc6464336f59914e1ea4cd56', // trend-signal
 ];
