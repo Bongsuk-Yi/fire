@@ -3,7 +3,7 @@ import HeroCalculator from '../components/HeroCalculator';
 import EtfCard from '../components/EtfCard';
 import etfData from '../data/etfs.json';
 import insightData from '../data/insights.json';
-import { ArrowRight, TrendingUp, DollarSign, ShieldAlert, PieChart, Sparkles, Compass } from 'lucide-react';
+import { ArrowRight, TrendingUp, DollarSign, ShieldAlert, PieChart, Compass } from 'lucide-react';
 
 export default function Home({ navigate, onToggleCompare, comparedList }) {
   // Select SCHD, VIG, QQQM for featured cards
@@ -60,10 +60,6 @@ export default function Home({ navigate, onToggleCompare, comparedList }) {
         <div className="page-shell relative grid gap-6 py-8 sm:gap-7 sm:py-14 lg:grid-cols-[1fr_0.92fr] lg:items-center lg:gap-16 lg:py-20">
           {/* Hero Left: Headlines */}
           <div className="order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-[var(--fire-amber-soft)] mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>FIRE 포트폴리오 랩 2026</span>
-            </div>
             <h1 className="text-[1.75rem] font-semibold leading-[1.18] tracking-[-0.045em] sm:text-5xl lg:text-6xl">
               막연한 FIRE 목표를<br />
               <span className="text-[var(--fire-amber-soft)]">실행 가능한 계획으로 바꿔보세요</span>

@@ -64,9 +64,6 @@ export default function PortfolioLab({ navigate }) {
   return (
     <div className="page-shell py-8 sm:py-12 flex-1">
       <div className="flex flex-col gap-2 pb-6 border-b border-[var(--line)]">
-        <span className="text-xs font-bold uppercase tracking-wider text-[var(--accent-strong)]">
-          Portfolio Lab
-        </span>
         <h1 className="text-2xl sm:text-4xl font-extrabold text-[var(--foreground)]">
           ETF 포트폴리오 연구소
         </h1>
