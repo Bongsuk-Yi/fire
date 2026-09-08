@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import PasswordGate from './components/PasswordGate';
+import { AUTH_STORAGE_KEY, verifyStoredHash } from './config/auth';
 import Home from './pages/Home';
 import FireCalculator from './pages/FireCalculator';
 import OpportunityCost from './pages/OpportunityCost';
@@ -20,6 +22,21 @@ export default function App() {
 
   const [currentPath, setCurrentPath] = useState(getInitialPath);
   const [comparedList, setComparedList] = useState([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    try {
+      const stored = localStorage.getItem(AUTH_STORAGE_KEY);
+      return Boolean(stored && verifyStoredHash(stored));
+    } catch (_) {
+      return false;
+    }
+  });
+
+  const handleLock = () => {
+    try {
+      localStorage.removeItem(AUTH_STORAGE_KEY);
+    } catch (_) {}
+    setIsAuthenticated(false);
+  };
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -52,6 +69,11 @@ export default function App() {
   };
 
   const clearCompare = () => setComparedList([]);
+
+  // If not authenticated, display password gate screen
+  if (!isAuthenticated) {
+    return <PasswordGate onUnlock={() => setIsAuthenticated(true)} />;
+  }
 
   // Route matching
   const renderPage = () => {
@@ -115,7 +137,7 @@ export default function App() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[var(--background)]">
-      <Navbar currentPath={currentPath} navigate={navigate} />
+      <Navbar currentPath={currentPath} navigate={navigate} onLock={handleLock} />
       <main className="flex-1 flex flex-col">
         {renderPage()}
       </main>

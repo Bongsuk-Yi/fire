@@ -1,7 +1,7 @@
 import React from 'react';
-import { Flame, Calculator, ArrowRight } from 'lucide-react';
+import { Flame, Calculator, ArrowRight, Lock } from 'lucide-react';
 
-export default function Navbar({ currentPath, navigate }) {
+export default function Navbar({ currentPath, navigate, onLock }) {
   const navLinks = [
     { label: '홈', path: '/' },
     { label: 'FIRE 계산기', path: '/fire-calculator' },
@@ -76,11 +76,22 @@ export default function Navbar({ currentPath, navigate }) {
             <button
               type="button"
               onClick={() => navigate('/fire-calculator')}
-              className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-[var(--accent)] px-4 text-xs sm:text-sm font-bold text-white transition-colors hover:bg-[var(--accent-strong)] shadow-sm"
+              className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-[var(--accent)] px-3 sm:px-4 text-xs sm:text-sm font-bold text-white transition-colors hover:bg-[var(--accent-strong)] shadow-sm"
             >
               <Calculator className="w-4 h-4" />
               <span>목표 계산</span>
             </button>
+            {onLock && (
+              <button
+                type="button"
+                onClick={onLock}
+                title="비밀번호 잠금"
+                className="inline-flex min-h-10 items-center gap-1 rounded-full border border-slate-200 bg-white px-2.5 sm:px-3 text-xs font-bold text-slate-600 transition hover:bg-slate-50 hover:text-slate-900 shadow-xs"
+              >
+                <Lock className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">잠금</span>
+              </button>
+            )}
           </div>
         </div>
 
