@@ -27,7 +27,7 @@ export default function Navbar({ currentPath, navigate, onLock }) {
             href="#/"
             onClick={(e) => { e.preventDefault(); navigate('/'); }}
             className="flex min-h-11 min-w-0 items-center gap-2.5 rounded-lg sm:gap-3 cursor-pointer"
-            aria-label="이지자동화 FIRE 홈"
+            aria-label="은퇴설계 홈"
           >
             <span className="h-9 w-9 shrink-0 sm:h-10 sm:w-10 flex items-center justify-center bg-[var(--accent-soft)] rounded-xl overflow-hidden shadow-sm">
               <img
