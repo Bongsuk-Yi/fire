@@ -69,7 +69,7 @@ export default function PasswordGate({ onUnlock }) {
 
         {/* Title & Sub */}
         <h1 className="mt-4 text-xl font-extrabold tracking-tight text-white sm:text-2xl">
-          이지자동화 FIRE
+          은퇴설계 퐈이어!!
         </h1>
         <p className="mt-1.5 text-xs text-slate-300 sm:text-[13px] leading-relaxed">
           데이터는 보호되어 있습니다. 비밀번호를 입력하세요.

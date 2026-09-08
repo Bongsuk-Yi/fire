@@ -29,26 +29,15 @@ export default function Navbar({ currentPath, navigate, onLock }) {
             className="flex min-h-11 min-w-0 items-center gap-2.5 rounded-lg sm:gap-3 cursor-pointer"
             aria-label="은퇴설계 홈"
           >
-            <span className="h-9 w-9 shrink-0 sm:h-10 sm:w-10 flex items-center justify-center bg-[var(--accent-soft)] rounded-xl overflow-hidden shadow-sm">
-              <img
-                src="./logo_fire.png"
-                alt="EasyAutomation Logo"
-                className="h-full w-full object-contain"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
-                }}
-              />
-              <span style={{ display: 'none' }} className="items-center justify-center w-full h-full text-[var(--accent-strong)]">
-                <Flame className="w-6 h-6" />
-              </span>
+            <span className="h-9 w-9 shrink-0 sm:h-10 sm:w-10 flex items-center justify-center bg-[var(--accent-soft)] rounded-xl overflow-hidden shadow-xs">
+              <Flame className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--accent-strong)]" />
             </span>
             <span className="min-w-0">
-              <span className="block truncate text-sm font-extrabold tracking-tight text-[var(--foreground)] sm:text-base">
-                이지자동화 FIRE
+              <span className="block truncate text-sm font-extrabold tracking-tight text-[var(--foreground)] sm:text-base leading-tight">
+                은퇴설계
               </span>
-              <span className="hidden text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--muted-foreground)] sm:block">
-                FIRE Portfolio Lab
+              <span className="block text-[10px] sm:text-xs font-bold text-[var(--accent-strong)] leading-tight">
+                퐈이어!!
               </span>
             </span>
           </a>
